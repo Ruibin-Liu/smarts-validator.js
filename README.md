@@ -11,14 +11,14 @@ npm install smarts-validator
 
 ### CDN (Browser)
 ```html
-<script src="https://unpkg.com/smarts-validator/dist/smarts-validator.min.js"></script>
+<script src="https://unpkg.com/smarts-validator/src/smarts-validator.js"></script>
 ```
 
 ## Quick Start
 
 ### Browser (Global)
 ```html
-<script src="dist/smarts-validator.min.js"></script>
+<script src="https://unpkg.com/smarts-validator/src/smarts-validator.js"></script>
 <script>
   const result = SMARTSValidator.validateSMARTS("[#6][CX3](=O)");
   // result = { valid: true, kind: "pattern", errors: [] }
