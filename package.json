@@ -4,7 +4,6 @@
   "description": "A standalone, zero-dependency JavaScript validator for SMARTS (SMiles ARbitrary Target Specification) patterns and reaction SMARTS",
   "main": "src/smarts-validator.js",
   "files": [
-    "dist/",
     "src/",
     "README.md",
     "LICENSE"
@@ -21,14 +20,14 @@
     "validator",
     "parser"
   ],
-  "author": "",
+  "author": "Ruibin Liu",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/smarts-validator.js.git"
+    "url": "https://github.com/Ruibin-Liu/smarts-validator.js.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/smarts-validator.js/issues"
+    "url": "https://github.com/Ruibin-Liu/smarts-validator.js/issues"
   },
-  "homepage": "https://github.com/yourusername/smarts-validator.js#readme"
+  "homepage": "https://ruibin-liu.github.io/smarts-validator/"
 }
