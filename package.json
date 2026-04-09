@@ -2,11 +2,7 @@
   "name": "smarts-validator",
   "version": "1.0.0",
   "description": "A standalone, zero-dependency JavaScript validator for SMARTS (SMiles ARbitrary Target Specification) patterns and reaction SMARTS",
-  "main": "dist/smarts-validator.js",
-  "module": "dist/smarts-validator.esm.js",
-  "unpkg": "dist/smarts-validator.min.js",
-  "jsdelivr": "dist/smarts-validator.min.js",
-  "types": "dist/smarts-validator.d.ts",
+  "main": "src/smarts-validator.js",
   "files": [
     "dist/",
     "src/",
@@ -14,9 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node test/test.js",
-    "build": "node build.js",
-    "prepublishOnly": "npm run build"
+    "test": "node test/test.js"
   },
   "keywords": [
     "smarts",
@@ -28,7 +22,7 @@
     "parser"
   ],
   "author": "",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/yourusername/smarts-validator.js.git"

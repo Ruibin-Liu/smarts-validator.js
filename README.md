@@ -177,15 +177,18 @@ smarts-validator/
 ├── src/
 │   └── smarts-validator.js     # Source (UMD module)
 ├── test/
-│   └── test.js                 # Test suite
-├── dist/                       # Built files (npm run build)
-│   ├── smarts-validator.js     # UMD build
-│   ├── smarts-validator.esm.js # ES module build
-│   └── smarts-validator.min.js # Minified for CDN
+│   └── test.js                 # Test suite (94 cases)
+├── example/
+│   └── index.html              # Browser demo
 ├── package.json
+├── LICENSE
 └── README.md
 ```
 
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
 ## License
 
-Same as the parent project.
+Licensed under the [Apache License 2.0](LICENSE).
