@@ -103,7 +103,12 @@
         </div>
     </div>
 
-    <script src="../src/smarts-validator.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/smarts-validator@latest/src/smarts-validator.js"></script>
+    <script>
+        if (typeof SMARTSValidator === "undefined") {
+            document.write('<script src="../src/smarts-validator.js"><\/script>');
+        }
+    </script>
     <script>
         function validate() {
             const input = document.getElementById('smarts-input').value;
