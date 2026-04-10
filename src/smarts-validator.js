@@ -56,6 +56,7 @@
       this.i = 0;
       this.atomIndex = 0;
       this.pendingRings = new Map();
+      this._lastPrimitiveWasCharge = false;
     }
 
     parse() {
@@ -253,10 +254,14 @@
       while (true) {
         if (this.peek() === "&") {
           this.i++;
+          this._lastPrimitiveWasCharge = false;
           this.parseAtomUnary();
           continue;
         }
         if (this.isImplicitAtomAndStart()) {
+          if (this._lastPrimitiveWasCharge && (this.peek() === "+" || this.peek() === "-")) {
+            this.fail("Adjacent charge primitives must be separated by an explicit operator (& , ;)");
+          }
           this.parseAtomUnary();
           continue;
         }
@@ -275,6 +280,8 @@
     }
 
     parseAtomPrimary() {
+      this._lastPrimitiveWasCharge = false;
+
       if (this.startsWith("$(")) {
         this.i += 2;
         const ok = this.parsePattern(")");
@@ -326,6 +333,7 @@
       }
 
       if (ch === "+" || ch === "-") {
+        this._lastPrimitiveWasCharge = true;
         this.parseCharge();
         return;
       }
@@ -360,7 +368,7 @@
       }
 
       if (this.isDigit(this.peek())) {
-        const n = this.parseUnsignedInt();
+        this.parseUnsignedInt();
       }
     }
 
@@ -386,7 +394,7 @@
     parseHybridization() {
       this.expect("^");
       const n = this.parseUnsignedInt();
-      if (n < 0 || n > 8) {
+      if (n > 8) {
         this.fail("Hybridization ^n must be in the range 0..8");
       }
     }

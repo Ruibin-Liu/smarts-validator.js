@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A standalone, zero-dependency JavaScript validator for SMARTS (SMiles ARbitrary Target Specification) patterns and reaction SMARTS",
   "main": "src/smarts-validator.js",
+  "exports": {
+    ".": "./src/smarts-validator.js"
+  },
   "files": [
     "src/",
     "README.md",

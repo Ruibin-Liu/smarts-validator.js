@@ -156,9 +156,9 @@ Or in browser:
 
 ### Test Coverage
 
-- **44 positive pattern cases** from OpenBabel's SMARTS library (functional group patterns)
+- **55 positive pattern cases** from OpenBabel's SMARTS library (functional group patterns)
 - **6 positive reaction cases** (oxidation, substitution, mapped reactions, agents)
-- **34 negative cases** covering syntax errors, range violations, structural errors, and derived malformed variants of positive cases
+- **36 negative cases** covering syntax errors, range violations, structural errors, and derived malformed variants of positive cases
 
 ## Architecture
 
@@ -177,7 +177,7 @@ smarts-validator/
 ├── src/
 │   └── smarts-validator.js     # Source (UMD module)
 ├── test/
-│   └── test.js                 # Test suite (94 cases)
+│   └── test.js                 # Test suite (97 cases)
 ├── example/
 │   └── index.html              # Browser demo
 ├── package.json

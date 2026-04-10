@@ -102,6 +102,7 @@
     { id: "neg-18", input: "[#0]", errorIncludes: "Atomic number must be in the range 1..118", source: "derived" },
     { id: "neg-19", input: "[#119]", errorIncludes: "Atomic number must be in the range 1..118", source: "derived" },
     { id: "neg-20", input: "[C:0]", errorIncludes: "Atom map must be >= 1", source: "derived" },
+    { id: "neg-21", input: "[C+-]", errorIncludes: "Adjacent charge primitives", source: "derived" },
     { id: "neg-22", input: "[^9]", errorIncludes: "Hybridization ^n must be in the range 0..8", source: "derived" },
     { id: "neg-23", input: "[@TB21]", errorIncludes: "@TB21 is out of allowed range 1..20", source: "derived" },
     { id: "neg-24", input: "C=", errorIncludes: "Expected atom after bond expression", source: "derived" },
@@ -114,7 +115,9 @@
     { id: "neg-ob-9a", input: "[CX3]=N([#6,#1])[#6,#1", errorIncludes: 'Expected "]"', source: "openbabel-derived", derivedFrom: 9 },
     { id: "neg-ob-17a", input: "[#6,#1]C([#6,#1])([OH])([OH]", errorIncludes: 'Expected ")"', source: "openbabel-derived", derivedFrom: 17 },
     { id: "neg-ob-24a", input: "[#6,#1]C([#6,#1])=C([#6,#1])N([#6,#1])[#6,#1]]", errorIncludes: 'Unexpected "]"', source: "openbabel-derived", derivedFrom: 24 },
-    { id: "neg-ob-37a", input: "[#6]O[#6].", errorIncludes: 'Pattern cannot end with "."', source: "openbabel-derived", derivedFrom: 37 }
+    { id: "neg-ob-37a", input: "[#6]O[#6].", errorIncludes: 'Pattern cannot end with "."', source: "openbabel-derived", derivedFrom: 37 },
+    { id: "neg-30", input: "[C++-]", errorIncludes: "Adjacent charge primitives", source: "derived" },
+    { id: "neg-31", input: "[C+++++-++]", errorIncludes: "Adjacent charge primitives", source: "derived" }
   ];
 
   const allCases = positiveCases.concat(
@@ -163,7 +166,7 @@
   if (typeof module !== "undefined" && !module.parent) {
     const results = runTestSuite();
     console.log(`\nSMARTS Validator Test Results`);
-    console.log(`=============================`.replace(/./g, '='));
+    console.log(`=============================`);
     console.log(`Passed: ${results.passed}/${results.total}`);
     console.log(`Failed: ${results.failed}/${results.total}`);
     
